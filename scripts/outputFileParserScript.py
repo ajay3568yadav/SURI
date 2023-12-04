@@ -1,7 +1,5 @@
 import sys
-
 import pickle
-
 sys.path.append("classes")
 from delayobject import DelayObject
 
@@ -15,15 +13,10 @@ while current_line[:4]!="$var":
     current_line=f.readline().rstrip("\n")
     
 """ 
-
-Objectdict structure is as follow:
-
+The objectdict structure is as follows:
 object_dictionary: type: dict
-
 <key> : Radix, <value>: delay object/ object of class DelayObject
-
 """
-
 object_dictionary = {}
 
 end_of_file = False
@@ -59,10 +52,10 @@ try:
             # mapping the objects to their radix
             if delay_object.radix not in list(object_dictionary.keys()):
                 
-                #multiple DelayObject can have same radix value therefore a list is used
+                #multiple DelayObject can have the same radix value therefore a list is used
                 object_dictionary[delay_object.radix]=[]
             
-            # appending the DelayObject to the list corresponding to the respecitve radix 
+            # appending the DelayObject to the list corresponding to the respective radix 
             object_dictionary[delay_object.radix].append(delay_object)
             
         if current_line == "$upscope $end":
@@ -100,10 +93,10 @@ while current_line != "":
     elif current_line[0] == "b" or current_line[0] == "B":
         
         
-        #splitting the string containing signal value and the identifier
+        #splitting the string containing the signal value and the identifier
         current_line_split_list = current_line.split() 
         
-        #storing the time in the dictionary with time as key and value 0 or 1 as the value
+        #storing the time in the dictionary with time as the key and value 0 or 1 as the value
         radix = current_line_split_list[-1]
         
         #object list corresponding to the given radix
