@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from torch_geometric.data import Data
 from torch_geometric.nn import GCNConv, GraphConv, global_mean_pool
 from torch_geometric.loader import DataLoader as Loader
-from dataloader import DataLoader  # assuming this import is necessary
+from dataloader import DataLoader
 from delayobject import DelayObject
 
 
