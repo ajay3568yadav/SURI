@@ -164,9 +164,7 @@ for x in datas:
 with open('graph_dataset.pkl', 'wb') as file:
     pickle.dump(graph_dataset, file)
     
-# Assuming additional_points is defined in your code
 additional_points = np.linspace(0.9, 1.5, 1000).tolist()
 
-# Pickle the additional_points variable
 with open('additional_points.pkl', 'wb') as file:
     pickle.dump(additional_points, file)
